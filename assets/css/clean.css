@@ -1,0 +1,350 @@
+/* ==========================================================================
+   Hack Your FOFO — clean static stylesheet
+   Replaces the Divi/et-core framework CSS. Hand-written, dependency-free.
+   ========================================================================== */
+
+:root {
+	--cyan: #90d5e1;
+	--grey: #939597;
+	--dark: #1f1f1f;
+	--pink: #e52364;
+	--max-width: 1080px;
+	--font-heading: 'Montserrat', Helvetica, Arial, sans-serif;
+	--font-body: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: var(--font-body);
+	color: var(--dark);
+	line-height: 1.7;
+	background: #fff;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+a {
+	color: var(--cyan);
+}
+
+a:hover {
+	color: var(--pink);
+}
+
+h1, h2, h3, h4 {
+	font-family: var(--font-heading);
+	font-weight: 700;
+	margin: 0 0 0.5em;
+}
+
+p {
+	margin: 0 0 1em;
+}
+
+.container {
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+/* --- Header / Nav -------------------------------------------------------- */
+
+#main-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding: 16px 20px;
+}
+
+#main-header .logo_container img {
+	height: 50px;
+	width: auto;
+}
+
+#main-header nav ul {
+	list-style: none;
+	display: flex;
+	gap: 28px;
+	margin: 0;
+	padding: 0;
+}
+
+#main-header nav a {
+	color: var(--dark);
+	text-decoration: none;
+	font-family: var(--font-heading);
+	font-weight: 500;
+	font-size: 14px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+#main-header nav a:hover,
+#main-header nav a[aria-current="page"] {
+	color: var(--cyan);
+}
+
+@media (max-width: 600px) {
+	#main-header {
+		flex-direction: column;
+		gap: 12px;
+		text-align: center;
+	}
+	#main-header nav ul {
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 16px;
+	}
+}
+
+/* --- Hero ----------------------------------------------------------------- */
+
+.hero {
+	position: relative;
+	background: var(--cyan) url("../images/2018/07/image-correction-.jpg") center center / cover no-repeat;
+	background-blend-mode: multiply;
+	color: #fff;
+	text-align: center;
+	padding: 100px 20px;
+}
+
+.hero h1 {
+	font-size: 60px;
+	line-height: 1.2;
+	margin-bottom: 0.2em;
+}
+
+.hero .subhead {
+	display: block;
+	font-size: 22px;
+	margin-bottom: 1em;
+}
+
+.hero .hero-dates {
+	font-size: 18px;
+}
+
+.hero .hero-dates h2 {
+	font-size: 18px;
+	font-family: var(--font-body);
+	font-weight: 400;
+	margin: 0;
+}
+
+@media (max-width: 767px) {
+	.hero {
+		padding: 60px 20px;
+	}
+	.hero h1 {
+		font-size: 32px;
+	}
+	.hero .subhead {
+		font-size: 18px;
+	}
+}
+
+/* --- Sections --------------------------------------------------------------- */
+
+section {
+	padding: 40px 0;
+}
+
+.section-light {
+	background: #fff;
+	color: var(--dark);
+}
+
+.section-grey {
+	background: var(--grey);
+	color: #fff;
+}
+
+.section-cyan {
+	background: var(--cyan);
+	color: var(--grey);
+}
+
+.section-title {
+	text-align: center;
+	color: var(--cyan);
+	font-size: 36px;
+	margin-bottom: 1em;
+}
+
+.section-grey .section-title,
+.section-cyan .section-title {
+	color: #fff;
+}
+
+.section-cyan .section-title {
+	color: var(--grey);
+}
+
+.text-center {
+	text-align: center;
+}
+
+/* --- Buttons ---------------------------------------------------------------- */
+
+.btn {
+	display: inline-block;
+	padding: 0.6em 1.6em;
+	background: #fff;
+	color: var(--grey) !important;
+	font-family: var(--font-heading);
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-decoration: none;
+	border: 2px solid transparent;
+	transition: all 0.2s ease;
+}
+
+.btn:hover {
+	background: var(--pink);
+	color: #fff !important;
+}
+
+/* --- Two-column layouts ------------------------------------------------------ */
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.row > * {
+	flex: 1 1 0;
+	min-width: 260px;
+}
+
+.row.partner-row {
+	align-items: center;
+}
+
+.partner-row .partner-logo {
+	flex: 0 0 200px;
+	min-width: 150px;
+}
+
+/* --- FAQ accordion (native <details>/<summary>) ------------------------------ */
+
+.accordion-item {
+	margin-bottom: 10px;
+	border: 1px solid #d9d9d9;
+	background-color: #f4f4f4;
+}
+
+.accordion-item[open] {
+	background-color: #fff;
+}
+
+.accordion-item summary {
+	display: block;
+	padding: 18px 40px 18px 20px;
+	position: relative;
+	cursor: pointer;
+	font-weight: 600;
+	font-family: var(--font-heading);
+	color: var(--dark);
+	list-style: none;
+}
+
+.accordion-item summary::-webkit-details-marker {
+	display: none;
+}
+
+.accordion-item summary::after {
+	content: "+";
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 18px;
+	color: var(--cyan);
+}
+
+.accordion-item[open] summary::after {
+	content: "\2212";
+}
+
+.accordion-item .accordion-content {
+	padding: 0 20px 20px;
+}
+
+.accordion-item .accordion-content p:last-child {
+	margin-bottom: 0;
+}
+
+/* --- Schedule table ----------------------------------------------------------- */
+
+.schedule-day h3 {
+	color: var(--cyan);
+	text-align: center;
+	font-size: 22px;
+	margin-bottom: 1em;
+}
+
+.schedule-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.schedule-list li {
+	display: flex;
+	gap: 16px;
+	padding: 12px 0;
+	border-bottom: 1px solid #eee;
+}
+
+.schedule-list .time {
+	flex: 0 0 70px;
+	font-weight: 700;
+	color: var(--grey);
+}
+
+/* --- Map ------------------------------------------------------------------------ */
+
+.map-embed {
+	width: 100%;
+}
+
+.map-embed iframe {
+	width: 100%;
+	height: 450px;
+	border: 0;
+	display: block;
+}
+
+/* --- Footer ----------------------------------------------------------------------- */
+
+#main-footer {
+	background: var(--cyan);
+	color: var(--grey);
+	text-align: center;
+	padding: 16px 20px;
+	font-size: 14px;
+}
+
+#main-footer a {
+	color: var(--grey);
+	font-weight: 700;
+}
